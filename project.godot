@@ -14,3 +14,7 @@ config/name="MapNoteMaster"
 run/main_scene="uid://bs2qqxb6dv81f"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+DungeonManager="*res://scripts/dungeon_manager.gd"

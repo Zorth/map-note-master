@@ -1,11 +1,10 @@
 extends Node
 
-@export var pan_sensitivity := 1.0
 @export var zoom_step := 0.12
 @export var min_zoom := 0.1
 @export var max_zoom := 6.0
 
-@onready var _camera: Camera2D = %Camera2D
+@onready var _camera = self
 
 var dragging := false
 var drag_button := MOUSE_BUTTON_MIDDLE
@@ -27,7 +26,7 @@ func _unhandled_input(event):
 		var now = get_viewport().get_mouse_position()
 		var delta = now - last_mouse_pos
 		last_mouse_pos = now
-		_camera.position -= delta  * pan_sensitivity / _camera.zoom
+		_camera.position -= delta / _camera.zoom
 
 	# Zoom with scroll wheel (wheel up = zoom in)
 	if event is InputEventMouseButton and event.pressed:

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://beajlfxofsnut"]
+
+[ext_resource type="Script" uid="uid://bi4qxcn7ctgtq" path="res://scripts/dungeon_node.gd" id="1_14ujy"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_14ujy")
+color = Color(0.83137256, 0.9098039, 1, 0.972549)

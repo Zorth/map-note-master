@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://bs2qqxb6dv81f"]
+
+[ext_resource type="Script" uid="uid://kabht2t2va3r" path="res://scripts/dungeon_spawner.gd" id="1_ueq4j"]
+[ext_resource type="PackedScene" uid="uid://beajlfxofsnut" path="res://scenes/DungeonNode.tscn" id="2_5u8um"]
+[ext_resource type="Script" uid="uid://dpguxf2y28fi2" path="res://scripts/pan_controller.gd" id="3_o311h"]
+[ext_resource type="Script" uid="uid://7x80qruhvhyd" path="res://scripts/grid_background.gd" id="4_bl8ey"]
+[ext_resource type="Script" uid="uid://ca48d1xo6u0xe" path="res://scripts/file_scanner.gd" id="5_8blxd"]
+
+[node name="DungeonMain" type="Node2D"]
+script = ExtResource("1_ueq4j")
+dungeon_scene = ExtResource("2_5u8um")
+offset_x = 450.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("3_o311h")
+
+[node name="Canvas" type="Node2D" parent="."]
+
+[node name="GridBackground" type="Node2D" parent="Canvas"]
+script = ExtResource("4_bl8ey")
+square_size = 100.0
+color_a = Color(0.25565878, 0.2556588, 0.25565875, 1)
+color_b = Color(0.4045111, 0.40451115, 0.4045111, 1)
+grid_alpha = 1.0
+
+[node name="FileScanner" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("5_8blxd")
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="HUD"]
+offset_right = 40.0
+offset_bottom = 23.0
+metadata/_edit_use_anchors_ = true
