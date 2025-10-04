@@ -36,4 +36,4 @@ func _ready():
 		dungeon_nodes.append(dungeon_node)
 
 	# Only call layout once after all dungeons are spawned
-	DungeonManager.layout_dungeons(350.0)
+	DungeonManager.layout_dungeons_force_directed()  # optional param center_origin=false
